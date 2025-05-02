@@ -1,6 +1,6 @@
 // pages/index.tsx
 
-import { GetStaticProps } from "next";
+import { GetStaticProps, InferGetStaticPropsType } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import path from "path";
@@ -17,17 +17,13 @@ interface Article {
   createdAt: string;
 }
 
-interface ArticlesPageProps {
-  articles: Article[];
-}
-
 const getArticlesData = (): Article[] => {
   const filePath = path.join(process.cwd(), "data", "article.json");
   const fileData = fs.readFileSync(filePath, "utf-8");
   return JSON.parse(fileData);
 };
 
-export default function Home({ articles }: ArticlesPageProps) {
+export default function Home({ articles }: InferGetStaticPropsType<typeof getStaticProps>) {
   const router = useRouter();
 
   if (router.isFallback) {
@@ -38,7 +34,7 @@ export default function Home({ articles }: ArticlesPageProps) {
     <main className="p-8">
       <h1 className="text-3xl font-bold mb-4">Mini Blog</h1>
       <div className="flex gap-8 justify-around">
-        {articles.map((article) => (
+        {articles.map((article: Article) => (
           <Link key={article.id} href={`/articles/${article.id}`}>
           
               <Image

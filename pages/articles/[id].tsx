@@ -1,6 +1,6 @@
 // pages/articles/[id].tsx
 
-import { GetStaticPaths, GetStaticProps } from "next";
+import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import path from "path";
@@ -16,11 +16,7 @@ interface Article {
   createdAt: string;
 }
 
-interface ArticleProps {
-  article: Article;
-}
-
-export default function ArticlePage({ article }: ArticleProps) {
+export default function ArticlePage({ article }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <main className="p-8">
       <Link href="/">
