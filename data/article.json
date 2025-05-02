@@ -1,0 +1,27 @@
+[
+    {
+        "id": "1",
+        "title": "Introduction à Next.js",
+        "description": "Apprenez les bases de Next.js en quelques minutes.",
+        "image": "/images/blogg.png",
+        "content": "Next.js est un framework React puissant pour le développement web moderne...",
+        "createdAt": "2024-12-01T10:00:00Z"
+      },
+      {
+        "id": "2",
+        "title": "Les hooks en React",
+        "description": "Comprenez les hooks comme useState et useEffect.",
+        "image": "/images/blogOne.png",
+        "content": "Les hooks permettent d'ajouter un état local dans les fonctions composants...",
+        "createdAt": "2025-01-15T14:30:00Z"
+      },
+      {
+        "id": "3",
+        "title": "Déployer une app sur Vercel",
+        "description": "Guide étape par étape pour le déploiement sur Vercel.",
+        "image": "/images/blogTwo.png",
+        "content": "Vercel est une plateforme idéale pour héberger des projets Next.js...",
+        "createdAt": "2025-03-10T08:45:00Z"
+      }
+  ]
+  
