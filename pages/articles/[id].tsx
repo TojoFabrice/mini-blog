@@ -58,7 +58,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   return {
     paths,
-    fallback: "blocking", // nouvelle page générée à la volée côté serveur, pas de loading
+    fallback: true // "blocking", 
   };
 };
 
